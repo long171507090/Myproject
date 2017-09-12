@@ -1,0 +1,20 @@
+package com.nctu02;
+
+import java.util.concurrent.TimeUnit;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class HelloSwing {
+	public static void main(String[] args) throws InterruptedException {
+		JFrame jf = new JFrame("hello,JFrame");
+		JLabel jl = new JLabel("a Label");
+		jf.add(jl);
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf.setSize(300, 200);
+		jf.setVisible(true);
+		TimeUnit.SECONDS.sleep(2);
+		jl.setText("nihao,java");
+	}
+
+}

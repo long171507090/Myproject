@@ -1,0 +1,12 @@
+package com.nctu03;
+
+public class Test {
+	private String name;
+
+	public Test(String name) {
+		super();
+		this.name = name;
+	}
+	
+
+}

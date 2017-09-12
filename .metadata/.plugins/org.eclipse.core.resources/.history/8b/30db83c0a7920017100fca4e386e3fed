@@ -1,0 +1,9 @@
+package com.nctu01;
+
+public class Test {
+	public static void main(String[] args) {
+		Share share = new Share();
+		Producer name = new Producer(share);
+	}
+
+}

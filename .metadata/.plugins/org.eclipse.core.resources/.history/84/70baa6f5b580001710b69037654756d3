@@ -1,0 +1,19 @@
+
+public class digui {
+	public static int fun(int n){
+		System.out.println(n);
+			
+			n--;
+			if(n==0)
+			{
+				return ;
+			}
+			return fun(n);
+	}
+    public static void main(String[] args) {
+    	
+    	int result=fun(6);
+    	System.out.println(result);
+		
+	}
+}

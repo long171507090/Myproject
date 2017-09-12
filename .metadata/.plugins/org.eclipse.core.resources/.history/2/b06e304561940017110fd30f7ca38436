@@ -1,0 +1,32 @@
+package com.nctu03;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class NestDemo {
+	public static void main(String[] args) {
+		JFrame jf = new JFrame("这是个嵌套窗体");
+		jf.setLayout(new BorderLayout());
+		JPanel westJPanel = new JPanel();
+		westJPanel.setBackground(Color.GREEN);
+		jf.add(westJPanel, BorderLayout.WEST);
+		westJPanel.setPreferredSize(new Dimension(60,60));
+		
+		JPanel southJPanel = new JPanel();
+		southJPanel.setBackground(Color.YELLOW);
+		jf.add(southJPanel, BorderLayout.SOUTH);
+		
+		JPanel center = new JPanel();
+		jf.add(center, BorderLayout.CENTER);
+		
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf.setBounds(200, 200, 500, 350);
+		jf.setVisible(true);
+	}
+
+}

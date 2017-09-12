@@ -1,0 +1,13 @@
+package com.day0906;
+
+public class Banks {
+	private String name;
+	private int money;
+	public Banks(String name, int money) {
+		super();
+		this.name = name;
+		this.money = money;
+	}
+	
+
+}

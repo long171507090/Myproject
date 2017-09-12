@@ -1,0 +1,15 @@
+package com.nctu01;
+
+public class Producer implements Runnable {
+	private Share share = null;
+	public Producer(Share share){
+		
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

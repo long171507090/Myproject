@@ -1,0 +1,22 @@
+package com.nctu02;
+
+class person extends Thread{
+	private int num = 50;
+	person(String name){
+		super(name);
+	}
+	@Override
+	public void run() {
+		for (int i = 0; i < num; i++) {
+			if(num>0){
+				System.out.println("吃了第"+(i+1)+"个苹果");
+			}
+		}
+	}
+}
+public class ExtendsDemo {
+	public static void main(String[] args) {
+		
+	}
+
+}

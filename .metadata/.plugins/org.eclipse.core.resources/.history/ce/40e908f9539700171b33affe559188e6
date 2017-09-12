@@ -1,0 +1,128 @@
+package com.nctu02;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import com.nctu02.user.Users;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Jframe2 {
+
+	public JFrame frame;
+	private Users users;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Jframe2 window = new Jframe2();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Jframe2() {
+		initialize();
+	}
+	
+
+	public Jframe2(Users users) {
+		initialize();
+		this.users = users;
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setFont(new Font("宋体", Font.PLAIN, 14));
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("用户信息");
+		lblNewLabel.setFont(new Font("宋体", Font.PLAIN, 16));
+		lblNewLabel.setBounds(10, 10, 79, 31);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("用户名:");
+		lblNewLabel_1.setFont(new Font("宋体", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(110, 51, 54, 15);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("生  日:");
+		lblNewLabel_2.setFont(new Font("宋体", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(110, 86, 54, 15);
+		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblnewlabel_3 = new JLabel("性  别:");
+		lblnewlabel_3.setFont(new Font("宋体", Font.PLAIN, 14));
+		lblnewlabel_3.setBounds(110, 123, 54, 15);
+		frame.getContentPane().add(lblnewlabel_3);
+		
+		final JLabel username = new JLabel("New label");
+		username.setFont(new Font("宋体", Font.PLAIN, 14));
+		username.setBounds(174, 51, 107, 15);
+		frame.getContentPane().add(username);
+		
+		final JLabel brithday = new JLabel("New label");
+		brithday.setFont(new Font("宋体", Font.PLAIN, 14));
+		brithday.setBounds(174, 86, 107, 15);
+		frame.getContentPane().add(brithday);
+		
+		final JLabel sax = new JLabel("New label");
+		sax.setFont(new Font("宋体", Font.PLAIN, 14));
+		sax.setBounds(174, 123, 107, 15);
+		frame.getContentPane().add(sax);
+		
+		JLabel lblNewLabel_3 = new JLabel("兴  趣:");
+		lblNewLabel_3.setFont(new Font("宋体", Font.PLAIN, 14));
+		lblNewLabel_3.setBounds(110, 157, 54, 15);
+		frame.getContentPane().add(lblNewLabel_3);
+		
+		final JLabel hobby = new JLabel("New label");
+		hobby.setFont(new Font("宋体", Font.PLAIN, 14));
+		hobby.setBounds(174, 157, 107, 15);
+		frame.getContentPane().add(hobby);	
+		
+		JButton btnNewButton = new JButton("查看所有信息");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TableDemo2 window = new TableDemo2();
+				window.frame.setVisible(true);
+				frame.setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(280, 10, 116, 31);
+		frame.getContentPane().add(btnNewButton);
+		
+		frame.addWindowListener(new WindowAdapter() {
+			public void windowOpened(WindowEvent e){
+				//System.out.println(users);
+				username.setText(users.getName());
+				brithday.setText(users.getBirthday());
+				sax.setText(users.getSax());
+				hobby.setText(users.getHobby());
+			}
+		});
+	}
+
+}

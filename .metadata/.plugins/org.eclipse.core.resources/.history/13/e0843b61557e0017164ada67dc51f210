@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class abc {
+	static void imput(int arr[]){
+		for(int i=0;i<6;i++){
+			System.out.println(arr[i]);
+		}
+		
+	}
+	static void getStr(int arr[]){
+		int i,j,k;
+		for(i=0;i<6;i++)
+		{
+			for(j=0;j<6-i-1;j++){
+				if(arr[j]>arr[j+1])
+				{
+					k=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=k;
+				}
+			}
+		}
+		abc.imput(arr);
+	}
+	public static void main(String[] args) {
+         int arr[] = new int[10];
+         Scanner sc = new Scanner(System.in);
+         for(int i=0;i<10;i++)
+         {
+        	 System.out.println("请输入第"+(i+1)+"个值");
+        	 arr[i] = sc.nextInt();
+         }
+         abc.getStr(arr);
+	}
+
+}

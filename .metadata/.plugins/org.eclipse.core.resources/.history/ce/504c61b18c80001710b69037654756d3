@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class hello {
+
+	public static void main(String[] args){
+		
+		     Scanner sc =new Scanner(System.in);
+            /* int i;
+             int j;
+             System.out.println("请输入一个数");
+             i=sc.nextInt();
+             System.out.println("请输入一个字符串");
+             String arr=sc.next();
+             System.out.println(arr);
+             j=i%2==0?1:0;
+             if(j!=0)      
+             {
+            	 System.out.println(i+"是偶数");
+             }
+             else
+             {
+            	System.out.println(i+"是奇数"); 
+             }*/
+		     System.out.println("请输入学生成绩,成绩范围在0-100以内");
+             int a=sc.nextInt();
+             int b=a/10;
+             switch(b)
+             {
+             case 10:
+             case 9:
+            	 System.out.println("成绩为优");
+            	 break;
+             case 8:
+            	 System.out.println("成绩为良");
+            	 break;
+             case 7:
+             case 6:
+            	 System.out.println("成绩为中");
+            	 break;
+             case 5:
+             default :
+            	 System.out.println("成绩为差");
+             }
+	}
+
+}

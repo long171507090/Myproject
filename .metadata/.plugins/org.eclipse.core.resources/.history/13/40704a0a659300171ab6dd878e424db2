@@ -1,0 +1,16 @@
+package com.day0906;
+
+public class Banks {
+	private String name;
+	private int money;
+	private boolean isok = true;
+	public void svae(String name, int money) {
+		this.name = name;
+		this.money = money;
+	}
+	public void draw(){
+		
+	}
+	
+
+}

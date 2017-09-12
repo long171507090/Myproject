@@ -1,0 +1,19 @@
+import javax.swing.JFrame;
+public class digui extends JFrame {
+
+public MyFrame(String title) {
+
+super(title);
+
+}
+public static void main(String[] args) {
+
+MyFrame mf = new MyFrame("自定义窗口");
+
+mf.setBounds(0,0,500,500);
+
+mf.setVisible(true);
+
+}
+
+}

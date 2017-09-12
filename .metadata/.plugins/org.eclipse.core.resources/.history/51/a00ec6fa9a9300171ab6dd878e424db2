@@ -1,0 +1,12 @@
+package com.nctu01;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class Servers {
+	public static void main(String[] args) throws Exception {
+		System.out.println("服务端准备好了");
+		ServerSocket sst = new ServerSocket(9999);
+	}
+
+}

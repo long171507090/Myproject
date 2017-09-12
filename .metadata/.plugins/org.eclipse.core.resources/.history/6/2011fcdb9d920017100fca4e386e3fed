@@ -1,0 +1,30 @@
+package com.work3;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+class Tickets implements Runnable{
+	private int tickets = 10;
+	private final Lock lock = new ReentrantLock();
+
+	@Override
+	public void run() {
+		lock.lock();
+		if (tickets>0) {
+			for (int i = 0; i < 10; i++) {
+				System.out.println(Thread.currentThread().getName() + "抢到票了");
+				tickets--;
+			}
+		}
+		
+	}
+	
+}
+
+public class BuyTickets {
+	public static void main(String[] args) {
+		Tickets t1 = new Tickets();
+		new Thread(t1,"tom").start();
+	}
+
+}

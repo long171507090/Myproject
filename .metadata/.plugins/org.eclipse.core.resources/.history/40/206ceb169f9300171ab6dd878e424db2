@@ -1,0 +1,21 @@
+package com.nctu01;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class Users implements Runnable {
+	private String str;
+
+	public void run() {
+		try {
+			Socket socket = new Socket("127.0.0.1",9999);
+			
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

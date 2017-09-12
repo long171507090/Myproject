@@ -1,0 +1,14 @@
+package com.nctu03;
+
+import javax.swing.JFrame;
+
+public class NestDemo {
+	public static void main(String[] args) {
+		JFrame jf = new JFrame("这是个嵌套窗体");
+		
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf.setBounds(200, 200, 500, 350);
+		jf.setVisible(true);
+	}
+
+}

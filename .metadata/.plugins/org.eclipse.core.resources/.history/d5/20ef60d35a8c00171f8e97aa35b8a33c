@@ -1,0 +1,30 @@
+
+public class Throws {
+	public static void main(String[] args) throws Exception {
+		try {
+			int a = divide1(8, 0);
+			System.out.println(a);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+   public static int divide1(int num1,int num2) throws Exception {
+		
+		if(num2 == 0){
+			throw new Exception("num2不能为0");//返回异常
+		}
+		
+		try {
+			int ret = num1/num2;
+			System.out.println("结果:"+ret);
+			return ret;
+		} catch (ArithmeticException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
+		return 0;
+	}
+
+}

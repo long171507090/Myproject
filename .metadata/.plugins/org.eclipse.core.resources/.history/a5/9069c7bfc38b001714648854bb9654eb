@@ -1,0 +1,17 @@
+package com.nctu01;
+
+class  abc{
+	public static int run(){
+		return run();
+	}
+}
+
+public class ExceptionDemo {
+	public static void main(String[] args) {
+		//abc.run();
+//		1.java.lang.StackOverflowError
+		int a = 10/0;
+		System.out.println(a);
+	}
+
+}

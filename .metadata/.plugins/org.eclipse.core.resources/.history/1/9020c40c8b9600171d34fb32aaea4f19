@@ -1,0 +1,23 @@
+package com.nctu02;
+
+import com.nctu_util.JDBCUtils;
+
+public class MySQLjdbc {
+	private String username;
+	private String password;
+	private final JDBCUtils utils = new JDBCUtils();
+	public MySQLjdbc() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public MySQLjdbc(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+	public boolean Login (String name,String password){
+		String mqsql = "SELECT password FROM user ";
+		return false;
+	}
+
+}

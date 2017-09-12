@@ -1,0 +1,11 @@
+package com.nctu01;
+
+public class Share {
+	private String name;
+	private String gener;
+	public void push(String name,String gener){
+		this.name = name;
+		this.gener = gener;
+	}
+
+}

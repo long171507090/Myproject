@@ -1,0 +1,10 @@
+package com.nctu02;
+
+import com.nctu_util.JDBCUtils;
+
+public class MySQLjdbc {
+	private String username;
+	private String password;
+	private final JDBCUtils utils = new JDBCUtils();
+
+}

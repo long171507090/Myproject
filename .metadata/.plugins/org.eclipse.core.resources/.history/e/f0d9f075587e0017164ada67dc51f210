@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class abc {
+	static void imput(int arr[]){
+		for(int i=0;i<10;i++){
+			System.out.println("第"+(1+1)+"为排名"+arr[i]);
+		}
+		
+	}
+	static void getStr(int arr[]){
+		int i,j,k;
+		for(i=0;i<10;i++)
+		{
+			for(j=0;j<10-i-1;j++){
+				if(arr[j]>arr[j+1])
+				{
+					k=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=k;
+				}
+			}
+		}
+		abc.grade(arr);
+		abc.imput(arr);
+	}
+	static void grade(int arr[]){
+		int num=0,max,min;
+		double average=0l;
+		max=arr[9];
+		min=arr[0];
+		for(int i =0;i<10;i++)
+		{
+			num+=arr[i];
+		}
+		average=num/10.0;
+		System.out.println("这是个同学的总分是"+num);
+		System.out.println("其中最高分是:"+max);
+		System.out.println("其中最低分是:"+min);
+		System.out.println("十个同学的平均分是:"+average);
+	}
+	public static void main(String[] args) {
+         int arr[] = new int[10];
+         Scanner sc = new Scanner(System.in);
+         for(int i=0;i<10;i++)
+         {
+        	 System.out.println("请输入第"+(i+1)+"个值");
+        	 arr[i] = sc.nextInt();
+         }
+         abc.getStr(arr);
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.nctujoin;
+
+class joindemo extends Thread{
+	private int time;
+	public joindemo(int time){
+		this.time = time;
+	}
+}
+public class JoinTest {
+	public static void main(String[] args) {
+		
+	}
+
+}

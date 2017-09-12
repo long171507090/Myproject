@@ -1,0 +1,22 @@
+package com.nctu._join;
+
+class JoinThread extends Thread{
+	@Override
+	public void run() {
+		for (int i = 0; i < 50; i++) {
+			System.out.println("join"+i);
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+public class JoinDemo {
+	public static void main(String[] args) {
+		
+	}
+
+}

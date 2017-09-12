@@ -1,0 +1,8 @@
+package com.nctu01;
+
+public class Share {
+	private String name;
+	private String gener;
+	
+
+}

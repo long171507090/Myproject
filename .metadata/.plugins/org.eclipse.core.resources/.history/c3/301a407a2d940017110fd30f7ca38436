@@ -1,0 +1,11 @@
+package com.nctutowuser;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class ServerDemo {
+	public static void main(String[] args) throws IOException {
+		ServerSocket name = new ServerSocket(8888);
+	}
+
+}

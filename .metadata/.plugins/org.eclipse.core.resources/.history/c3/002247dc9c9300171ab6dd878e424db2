@@ -1,0 +1,19 @@
+package com.nctu01;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Servers implements Runnable {
+	public static void main(String[] args) throws Exception {
+		System.out.println("服务端准备好了");
+		ServerSocket sst = new ServerSocket(9999);
+		Socket accept = sst.accept();
+		Scanner sc = new Scanner(System.in);
+	}
+	public void run() {
+		
+		
+	}
+
+}

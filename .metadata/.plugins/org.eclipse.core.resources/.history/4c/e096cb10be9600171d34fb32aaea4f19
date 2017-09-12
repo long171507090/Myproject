@@ -1,0 +1,66 @@
+package com.nctu02;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class Jframe2 {
+
+	public JFrame frame;
+	private String name;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Jframe2 window = new Jframe2();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Jframe2() {
+		initialize();
+	}
+	
+
+	public Jframe2(String name) {
+		initialize();
+		this.name = name;
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
+		
+		final JLabel lblNewLabel = new JLabel("欢迎光临");
+		frame.addWindowListener(new WindowAdapter() {
+			public void windowOpened(WindowEvent e){
+				lblNewLabel.setText(""+name);
+			}
+		});
+		lblNewLabel.setFont(new Font("宋体", Font.PLAIN, 21));
+		lblNewLabel.setBounds(105, 74, 229, 37);
+		frame.getContentPane().add(lblNewLabel);
+	}
+
+}

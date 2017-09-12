@@ -1,0 +1,10 @@
+package com.nctu03;
+
+import javax.swing.JFrame;
+
+public class FlowLayouts {
+	public static void main(String[] args) {
+		JFrame name = new JFrame("流式布局");
+	}
+
+}

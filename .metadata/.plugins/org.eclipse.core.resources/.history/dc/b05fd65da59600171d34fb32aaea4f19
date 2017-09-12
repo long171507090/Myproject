@@ -1,0 +1,8 @@
+package com.nctu02.dao;
+
+public class Snippet {
+	public static void main(String[] args) {
+		userdao
+	}
+}
+

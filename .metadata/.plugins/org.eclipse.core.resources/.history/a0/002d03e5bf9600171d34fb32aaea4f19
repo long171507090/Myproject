@@ -1,0 +1,78 @@
+package com.nctu02;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JTextField;
+
+public class Jframe2 {
+
+	public JFrame frame;
+	private String name;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Jframe2 window = new Jframe2();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Jframe2() {
+		initialize();
+	}
+	
+
+	public Jframe2(String name) {
+		initialize();
+		this.name = name;
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
+		frame.addWindowListener(new WindowAdapter() {
+			public void windowOpened(WindowEvent e){
+				lblNewLabel.setText("欢迎光临"+name);
+			}
+		});
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("用户信息");
+		lblNewLabel.setFont(new Font("宋体", Font.PLAIN, 16));
+		lblNewLabel.setBounds(10, 10, 79, 31);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("用户名");
+		lblNewLabel_1.setFont(new Font("宋体", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(110, 51, 54, 15);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setBounds(170, 48, 66, 21);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+	}
+
+}

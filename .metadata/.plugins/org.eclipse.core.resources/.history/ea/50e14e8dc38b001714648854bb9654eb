@@ -1,0 +1,14 @@
+package com.nctu01;
+
+class  abc{
+	public static int run(){
+		return run();
+	}
+}
+
+public class ExceptionDemo {
+	public static void main(String[] args) {
+		abc.run();
+	}
+
+}

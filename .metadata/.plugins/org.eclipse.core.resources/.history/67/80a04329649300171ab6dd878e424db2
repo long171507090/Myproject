@@ -1,0 +1,11 @@
+package com.day0906;
+
+public class DrawMoney implements Runnable {
+	private Banks bank;
+
+	@Override
+	public void run() {
+		
+	}
+
+}

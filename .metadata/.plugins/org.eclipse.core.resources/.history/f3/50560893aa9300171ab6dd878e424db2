@@ -1,0 +1,38 @@
+package com.nctu02;
+
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.Socket;
+
+public class Threads extends Thread {
+	private Socket accept;
+	public Threads(Socket accept){
+		this.accept = accept;
+	}
+	
+	public void run() {
+		Socket accept = sst.accept();
+		//System.out.println(accept.getLocalAddress());
+//		3.建立输入和输出流
+		InputStream inputStream = accept.getInputStream();
+		ObjectInputStream ois = new ObjectInputStream(inputStream);
+		Object object = ois.readObject();
+		User user = (User) object;
+		System.out.println(user);
+		
+		OutputStream stream = accept.getOutputStream();
+		PrintWriter pw = new PrintWriter(stream);
+		String str1 = "你好,我是服务端";
+		pw.write(str1);
+		pw.flush();
+		
+		
+		pw.close();
+		ois.close();
+		inputStream.close();
+		accept.close();
+	}
+
+}

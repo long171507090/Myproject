@@ -1,0 +1,75 @@
+package com.nctu02;
+
+import java.awt.EventQueue;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import com.nctu02.dao.userdao;
+import com.nctu02.user.Users;
+
+public class TableDemo2 {
+
+	private JFrame frame;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TableDemo2 window = new TableDemo2();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public TableDemo2() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(85, 53, 261, 143);
+		frame.getContentPane().add(scrollPane);
+		userdao dao = new userdao();
+		Object[][] data = new Object[6][4];
+		List<Users> list = dao.showAll();
+		for (int i = 0; i < list.size(); i++) {
+			Users users = list.get(i);
+		    data[i][0] = users.getName();
+	        data[i][1] = users.getSax();
+		    data[i][2] = users.getHobby();
+		    data[i][3] = users.getBirthday();						
+			
+		}
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+				data,
+			new String[] {
+				"姓名", "性别", "爱好", "生日"
+			}
+		));
+		scrollPane.setViewportView(table);
+	}
+}

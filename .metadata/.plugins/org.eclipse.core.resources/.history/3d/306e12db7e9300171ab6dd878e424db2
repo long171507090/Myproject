@@ -1,0 +1,11 @@
+package com.nctusocked;
+
+
+public class LoginSocked {
+	public static void main(String[] args) throws Exception {
+//		1.建立客户端Socket，指定服务器位置和端口
+//		2.得到Socket读写流
+//		3.利用流按照一定的协议对socket进行读写操作
+//		4.使用close()关闭流和Socket
+	}
+}

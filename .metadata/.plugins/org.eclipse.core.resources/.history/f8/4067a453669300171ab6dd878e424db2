@@ -1,0 +1,14 @@
+package com.day0906;
+
+public class DrawMoney implements Runnable {
+	private Banks bank = null;
+	public DrawMoney(Banks bank){
+		this.bank = bank;
+	}
+
+	@Override
+	public void run() {
+		bank.draw();
+	}
+
+}

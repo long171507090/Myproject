@@ -1,0 +1,45 @@
+package com.nctu02.dao;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.nctu02.user.Users;
+import com.nctu_util.JDBCUtils;
+
+public class userdao {
+	private final JDBCUtils utils = new JDBCUtils();
+	public userdao(){
+		utils.getConnection();
+	}
+	
+	public boolean Login (String name,String password) throws Exception{
+		String sql = "SELECT password FROM t_user WHERE name = ?";
+		ArrayList<Object> list = new ArrayList<Object>();
+		list.add(name);
+		
+			Users result = utils.findSimpleRefResult(sql, list, Users.class);
+			if(result != null){
+			if(result.getPassword().equals(password)){
+				return true;
+			}else {
+				return false;
+			}
+			}
+	}
+	public boolean adduser(Users user){
+		
+		try {
+			String sql = "INSERT t_user(name,password,birthday,sax,hobby) SELECT ?,?,?,?,?";
+			ArrayList<Object> list = new ArrayList<Object>();
+			list.add(user.getName());
+			list.add(user.getPassword());
+			list.add(user.getBirthday());
+			list.add(user.getSax());
+			list.add(user.getHobby());
+			return  utils.updateByPreparedStatement(sql, list);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	return false;
+	}
+}

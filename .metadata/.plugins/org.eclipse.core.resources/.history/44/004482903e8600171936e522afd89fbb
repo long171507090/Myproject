@@ -1,0 +1,20 @@
+
+public class abc {
+	public static void main(String[] args) {
+        String str = "123";
+        int a = Integer.parseInt(str);
+        System.out.println(a);
+        Integer acInteger = Integer.valueOf(15);
+        System.out.println(acInteger);
+        int c = 202;
+        Integer accInteger = c;
+        String atr2;
+        atr2 = accInteger.toString();
+        System.out.println(atr2);
+        int[] arr = {1,2,3,4,5,6,7,8,9,7,8};
+        int[] arr2 = new int[10];
+        System.arraycopy(arr, 3, arr2, 5, 4);
+        System.out.println(arr2.toString());
+	}
+
+}

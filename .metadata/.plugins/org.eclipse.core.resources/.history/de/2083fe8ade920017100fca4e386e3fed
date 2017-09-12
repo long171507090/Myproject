@@ -1,0 +1,22 @@
+package com.nctu04;
+
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class TimerDemo {
+	public static void main(String[] args) {
+		Timer t = new Timer();
+		t.schedule(new TimerTask() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				Date d1 = new Date();
+				System.out.println(d1.toLocaleString());
+				this.cancel();
+			}
+		},3000,1000);
+	}
+
+}

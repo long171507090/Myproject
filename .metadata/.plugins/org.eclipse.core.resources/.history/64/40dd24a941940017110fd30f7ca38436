@@ -1,0 +1,29 @@
+package com.nctu02;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.plaf.basic.BasicOptionPaneUI.ButtonActionListener;
+
+public class HelloSwing {
+	public static void main(String[] args) throws InterruptedException {
+		JFrame jf = new JFrame("hello,JFrame");
+		JLabel jl = new JLabel("a Label");
+		jf.add(jl);
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf.setSize(300, 200);
+		jf.setVisible(true);
+		JButton jb1 = new JButton("来点我啊");
+		jf.add(jb1);
+		jb1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			  JOptionPane.showConfirmDialog(null, "点我干嘛");
+				
+			}
+		});
+	}
+
+}

@@ -1,0 +1,60 @@
+package com.nctu02;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.nctu_util.JDBCUtils;
+
+public class MySQLjdbc {
+	private String username;
+	private String password;
+	private final JDBCUtils utils = new JDBCUtils();
+	public MySQLjdbc() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public MySQLjdbc(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	@Override
+	public String toString() {
+		return "MySQLjdbc [username=" + username + ", password=" + password
+				+ "]";
+	}
+	public boolean Login (String name,String password){
+		String sql = "SELECT password FROM t_user WHERE name = ?";
+		ArrayList<Object> list = new ArrayList<Object>();
+		list.add(name);
+		try {
+			MySQLjdbc result = utils.findSimpleRefResult(sql, list, MySQLjdbc.class);
+			if(result.getPassword().equals(password)){
+				return true;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	public boolean adduser(ArrayList<Object> list) throws SQLException{
+		String sql = "INSERT t_user(name,password,birthday,max) SELECT ?,?,?,?";
+		return  utils.updateByPreparedStatement(sql, list);	
+	}
+
+}

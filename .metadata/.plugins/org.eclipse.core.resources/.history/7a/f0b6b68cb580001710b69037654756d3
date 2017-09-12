@@ -1,0 +1,20 @@
+
+public class digui {
+	public static int fun(int n){
+		if(n==0)
+		{
+			return 0;
+		}
+		else if(n==1){
+			return 1;
+		}
+		else{
+			return fun(n-1)+fun(n-2);
+		}
+	}
+    public static void main(String[] args) {
+    	int result=fun(15);
+    	System.out.println(result);
+		
+	}
+}

@@ -1,0 +1,16 @@
+package com.nctu04;
+
+import java.util.Timer;
+class Timertest implements Runnable{
+	@Override
+	public void run() {
+		System.out.println("你好世界");
+	}
+}
+
+public class TimerDemo {
+	public static void main(String[] args) {
+		Timer name = new Timer(new Timertest(),1000);
+	}
+
+}

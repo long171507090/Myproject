@@ -1,0 +1,6 @@
+package com.day0906;
+
+public class SavingMoney {
+	private Banks bank;
+
+}

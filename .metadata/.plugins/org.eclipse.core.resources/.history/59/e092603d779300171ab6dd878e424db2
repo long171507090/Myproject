@@ -1,0 +1,13 @@
+package com.nctuinter;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class InterAddressDemo {
+	public static void main(String[] args) throws Exception {
+		InetAddress ip = InetAddress.getByName("stu1608");
+		System.out.println(ip.hashCode());
+		System.out.println(InetAddress.getLocalHost());
+	}
+
+}

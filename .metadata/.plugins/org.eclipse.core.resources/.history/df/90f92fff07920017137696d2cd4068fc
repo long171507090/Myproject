@@ -1,0 +1,27 @@
+package com.nctu01;
+
+public class InnerClassDemo02 {
+	public static void main(String[] args) throws Exception {
+		for (int i = 0; i < 100; i++) {
+			System.out.println("玩游戏"+i);
+			Thread.sleep(500);
+			if(i == 2){
+				new Thread(){
+					@Override
+					public void run() {
+						for (int j = 0; j < 100; j++) {
+							System.out.println("听音乐");
+							try {
+								Thread.sleep(500);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					}
+				}.start();
+			}
+		}
+	}
+
+}

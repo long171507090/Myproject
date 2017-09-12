@@ -1,0 +1,33 @@
+public class abc {
+	public static void main(String[] args) {
+      int i,j;
+      for(i=0;i<4;i++)
+      {
+          for (j = 0; j < 4; j++) {
+        	  System.out.print("*");		
+		}
+          System.out.println();
+      }
+      for(i=0;i<4;i++)
+      {
+    	  for(j=0;j<=i;j++)
+    	  {
+    		  System.out.print("*");
+    	  }
+    	  System.out.println();
+      }
+      int n=1;
+      while(n<10)
+      {
+    	 int m=1;
+    	  while(m<=n)
+    	  {
+    		  System.out.print(m+"*"+n+"="+(n*m)+"\t");
+    		  m++;
+    	  }
+    	  System.out.println();
+    	  n++;
+      }
+	}
+
+}

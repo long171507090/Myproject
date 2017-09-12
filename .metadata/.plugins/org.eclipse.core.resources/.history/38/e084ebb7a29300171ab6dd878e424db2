@@ -1,0 +1,22 @@
+package com.nctu02;
+
+public class Snippet {
+	public static void main(String[] args) {
+	13         try {
+	14             ServerSocket server = new ServerSocket(8888);
+	15             Socket client = server.accept();
+	16             BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+	17             PrintWriter out=new PrintWriter(client.getOutputStream());
+	18             BufferedReader userin = new BufferedReader(new InputStreamReader(System.in));
+	19             
+	20             
+	21             new ReceiveTread(server,in,out,userin,client).start();
+	22             new SendThread(out, userin,true).start();
+	23         } catch (IOException e) {
+	24             e.printStackTrace();
+	25         }
+	26         
+	27         
+	28     }
+}
+

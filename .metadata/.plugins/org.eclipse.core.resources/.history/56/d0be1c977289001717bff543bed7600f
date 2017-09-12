@@ -1,0 +1,55 @@
+package com.nctu02;
+
+import java.util.LinkedList;
+
+public class Classes {
+		private LinkedList stus = new LinkedList();
+		//1.添加学生
+		public void add(Student stu){
+			if(stu==null){
+				System.out.println("该学生对象是空的,不能添加");
+			}else{
+				stus.add(stu);
+				System.out.println("添加成功");
+			}
+		}
+		public Student queryStudent(String name){
+			//遍历动态数组
+			for (Object obj : stus) {
+				Student s = (Student)obj;
+				if(s.getName().equals(name)){
+					return s;
+				}
+			}
+			return null;
+		}
+		public boolean deleteStudent(String id){
+			
+			//Student String
+			for(int i = 0;i<stus.size();i++){
+				Student s = (Student)stus.get(i);
+				if(s.getId().equals(id)){
+					stus.remove(i);//删除学生
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
+		
+		//4.全部查询
+		public void showAllStudents(){
+			for (Object obj : stus) {
+				if(obj instanceof Student){
+					Student s1 = (Student)obj;
+					System.out.println(s1);
+				}
+			}
+			
+		}
+		 
+
+}
+
+

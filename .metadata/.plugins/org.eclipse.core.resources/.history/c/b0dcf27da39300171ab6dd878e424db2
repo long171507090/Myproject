@@ -1,0 +1,33 @@
+package com.nctu02;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ServerDemo {
+	public static void main(String[] args) throws IOException, Exception {
+		System.out.println("服务端准备好了");
+//		1.建立服务器端Socket绑定指定端口并开始监听
+		ServerSocket sst = new ServerSocket(9999);
+//		2.使用accept()方法阻塞等待监听，获得新的连接
+		Socket accept = sst.accept();
+		System.out.println(accept.getLocalAddress());
+//		3.建立输入和输出流
+		InputStream inputStream = accept.getInputStream();
+		ObjectInputStream ois = new ObjectInputStream(inputStream);
+		Object object = ois.readObject();
+		
+//		4.在已有的协议上产生会话
+		
+//		5.使用close()关闭流和Socket
+		ois.close();
+		inputStream.close();
+		accept.close();
+	}
+	}
+
+

@@ -1,0 +1,10 @@
+package com.nctu02;
+
+public class Threads extends Thread {
+	
+	
+	public void run() {
+		
+	}
+
+}

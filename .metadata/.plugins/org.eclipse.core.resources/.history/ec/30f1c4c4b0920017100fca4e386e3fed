@@ -1,0 +1,39 @@
+package com.nctu01;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class Share {
+	private String name;
+	private String gener;
+	private final Lock lock = new ReentrantLock();
+	private boolean isok = true;
+	public synchronized void push(String name,String gener){
+		if(!isok){
+			
+		}
+			this.name = name;
+			try {
+				this.name = name;
+				Thread.sleep(10);
+				this.gener = gener;
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			this.gener = gener;
+		
+		
+	}
+	public synchronized void pop(){
+		try {
+			Thread.sleep(20);
+			System.out.println(this.name+"-----------------"+this.gener);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

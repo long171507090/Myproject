@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="0901IO"/>
+	<classpathentry kind="src" path="0904IO"/>
+	<classpathentry kind="src" path="0905Thread"/>
+	<classpathentry kind="src" path="0906"/>
+	<classpathentry kind="src" path="0907"/>
+	<classpathentry kind="src" path="0908"/>
+	<classpathentry kind="src" path="0912"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="D:/myecipse/mysql-connector-java-5.1.43/mysql-connector-java-5.1.43-bin.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

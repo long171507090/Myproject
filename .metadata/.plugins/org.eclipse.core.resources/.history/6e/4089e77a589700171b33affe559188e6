@@ -1,0 +1,94 @@
+package com.nctu02;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+import com.nctu02.dao.userdao;
+import com.nctu02.user.Users;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.util.List;
+
+public class TableDemo {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TableDemo window = new TableDemo();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public TableDemo() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("查看所有信息");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object[] colum = {"姓名","性别","爱好","生日"};
+				Object[][] data = new Object[3][4];
+				userdao dao = new userdao();
+				List<Users> list = dao.showAll();
+				for (Users users : list) {
+					for (int i = 0; i < data.length; i++) {
+						
+					}
+				}
+//				data[0][0] = "tom";
+//				data[0][1] = "男";
+//				data[0][2] = "唱歌";
+//				data[0][3] = "1997-03-13";
+//				
+//				data[1][0] = "jack";
+//				data[1][1] = "男";
+//				data[1][2] = "游泳";
+//				data[1][3] = "1995-06-13";
+//				
+//				data[2][0] = "rose";
+//				data[2][1] = "女";
+//				data[2][2] = "唱歌";
+//				data[2][3] = "1999-03-13";
+				
+				TableModel model = new DefaultTableModel(data,colum);
+				JTable table = new JTable(model);
+				JScrollPane scrll = new JScrollPane(table);
+				table.setFillsViewportHeight(true);
+				scrll.setBounds(50, 50, 300, 300);
+				frame.getContentPane().add(scrll);
+			}
+		});
+		btnNewButton.setBounds(141, 10, 105, 34);
+		frame.getContentPane().add(btnNewButton);
+	}
+
+}

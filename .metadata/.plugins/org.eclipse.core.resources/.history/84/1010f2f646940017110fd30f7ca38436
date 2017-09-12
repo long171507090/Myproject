@@ -1,0 +1,14 @@
+package com.nctu03;
+
+import javax.swing.JFrame;
+
+public class FlowLayouts {
+	public static void main(String[] args) {
+		JFrame jFrame = new JFrame("流式布局");
+		
+		jFrame.setBounds(200, 200, 500, 350);
+		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jFrame.setVisible(true);
+	}
+
+}

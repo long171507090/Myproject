@@ -1,0 +1,27 @@
+package com.nctu01;
+
+public class Share {
+	private String name;
+	private String gener;
+	public void push(String name,String gener){
+		this.name = name;
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		this.gener = gener;
+	}
+	public void pop(){
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(this.name+"-----------------"+this.gener);
+	}
+
+}
